@@ -27,8 +27,8 @@ Test Payment Details:
 
 ```
 Card Number: 4242 4242 4242 4242
-Expiry Date: any number in the future
-CVS: any number
+Expiry Date: any date in the future
+CVC: any number
 ```
 
 ### 💭Future Improvements

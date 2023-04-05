@@ -29,7 +29,7 @@ const redirecting = () => {
 };
 */
 export default function Home({ prices }: props) {
-  const handleClick = async (priceId: string) => {
+  /*const handleClick = async (priceId: string) => {
     const session = await createCheckoutSession({
       success_url: window.location.href,
       cancel_url: window.location.href,
@@ -47,7 +47,7 @@ export default function Home({ prices }: props) {
       stripe.redirectToCheckout({ sessionId: session.id });
     }
   };
-
+*/
   return (
     <>
       <Head>

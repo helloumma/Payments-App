@@ -5,10 +5,9 @@ import axios from "axios";
 import { loadStripe } from "@stripe/stripe-js";
 import { GetServerSideProps } from "next";
 import Stripe from "stripe";
-import { createCheckoutSession } from "next-stripe/client";
+//import { createCheckoutSession } from "next-stripe/client";
 import { checkout } from "../checkout";
 
-// rome-ignore lint/suspicious/noEmptyInterface: <explanation>
 interface getPrice extends Stripe.Price {
   product: Stripe.Product;
 }
@@ -43,7 +42,7 @@ export default function Home({ prices }: props) {
       payment_method_types: ["card"],
       mode: "payment",
     });
-    const stripe = await loadStripe(process.env.NEXT_PUBLIC_API_KEY);
+    const stripe = await loadStripe(process.env.NEXT_PUBLIC_API_KEY as string);
     if (stripe) {
       stripe.redirectToCheckout({ sessionId: session.id });
     }
@@ -59,14 +58,14 @@ export default function Home({ prices }: props) {
       </Head>
       <div>app</div>
 
-      {prices.map((price) => (
+      {/*prices.map((price) => (
         <>
           {price.product.name}
           <button key={price.id} onClick={() => handleClick(price.id)}>
             £{((price.unit_amount as number) / 100).toFixed(2)}
           </button>
         </>
-      ))}
+      ))*/}
       <button
         onClick={() => {
           checkout({
@@ -85,9 +84,9 @@ export default function Home({ prices }: props) {
   );
 }
 
-export const getServerSideProps: GetServerSideProps = async () => {
-  const stripe = new Stripe(process.env.STRIPE_SECRET_KEY, {
-    apiVersion: "2022-08-01",
+/*export const getServerSideProps: GetServerSideProps = async () => {
+  const stripe = new Stripe(process.env.STRIPE_SECRET_KEY as string, {
+    apiVersion: "2022-11-15",
   });
   const prices = await stripe.prices.list({
     active: true,
@@ -96,4 +95,4 @@ export const getServerSideProps: GetServerSideProps = async () => {
   });
   console.log(prices);
   return { props: { prices: prices.data } };
-};
+};*/

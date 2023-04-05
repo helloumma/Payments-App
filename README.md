@@ -34,4 +34,3 @@ CVC: any number
 ### 💭Future Improvements
 
 - Testing
-- Styling

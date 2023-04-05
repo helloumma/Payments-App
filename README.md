@@ -4,9 +4,9 @@ This small app utilises the Stripe API to make a dummy payment.
 
 ### 📋Aims of App
 
-- User can click on button and is redirect to make payment via Stripe
+- User can click on the button and is redirected to make payment via Stripe
 - Incorrect card details mean the user's payment is declined
-- The user is redirected to the homepage after completion of payment
+- The user is redirected to the home page after completion of payment
 
 ### 👩‍💻Technical Details
 

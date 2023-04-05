@@ -1,0 +1,25 @@
+img {
+  border-radius: 0.5em;
+  box-shadow: 0 3px 10px rgb(0 0 0 / 0.2);
+  margin-bottom: 2em;
+}
+
+button {
+  background: white;
+  border: 5px solid black;
+  font-size: 2rem;
+  width: 450px;
+}
+
+button:hover {
+  background: black;
+  color: white;
+  cursor: pointer;
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}

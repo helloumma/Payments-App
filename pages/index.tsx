@@ -1,4 +1,5 @@
 import Head from "next/head";
+import Image from "next/image";
 import { checkout } from "../checkout";
 
 export default function Home() {
@@ -10,20 +11,28 @@ export default function Home() {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <button
-        onClick={() => {
-          checkout({
-            lineItems: [
-              {
-                price: "price_1MtWYoCs2iAodiD7edm8y99m",
-                quantity: 1,
-              },
-            ],
-          });
-        }}
-      >
-        BUY!
-      </button>
+      <main>
+        <Image
+          src="/images/product.jpg"
+          width={450}
+          height={600}
+          alt="product"
+        />
+        <button
+          onClick={() => {
+            checkout({
+              lineItems: [
+                {
+                  price: "price_1MtWYoCs2iAodiD7edm8y99m",
+                  quantity: 1,
+                },
+              ],
+            });
+          }}
+        >
+          BUY!
+        </button>
+      </main>
     </>
   );
 }

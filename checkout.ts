@@ -1,7 +1,10 @@
 import { loadStripe, Stripe } from "@stripe/stripe-js";
 
 interface props {
-  lineItems: any;
+  lineItems: {
+    price?: string | undefined;
+    quantity?: number | undefined;
+  }[];
 }
 
 export const checkout = async ({ lineItems }: props) => {

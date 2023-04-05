@@ -9,7 +9,7 @@ export const checkout = async ({ lineItems }: props) => {
 
   const getStripe = () => {
     if (!stripePromise) {
-      stripePromise = loadStripe(process.env.NEXT_PUBLIC_API_KEY);
+      stripePromise = loadStripe(process.env.NEXT_PUBLIC_API_KEY as string);
     }
     return stripePromise;
   };
